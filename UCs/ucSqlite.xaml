@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="wpf_test.UCs.ucSqlite"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:wpf_test.UCs"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:Background="White">
+
+    <StackPanel x:Name="uc_Sqlite" VerticalAlignment="Top">
+        <Label Content="Data Viewer" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Top" />
+        <DataGrid x:Name="dg_datagrid" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Hash Id" Width="6*" Binding="{Binding hash_id}"/>
+                <DataGridTextColumn Header="SHA1" Width="6*" Binding="{Binding sha1}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DockPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0" Width="{Binding Path=ActualWidth, ElementName=dg_datagrid}">
+            <Button Name="butPageDown"  Content="&lt;" Click="OnPageDown" ClickMode="Press" />
+            <TextBox Name="tbPageNumber" Text="1" Width="100" HorizontalContentAlignment="Center" HorizontalAlignment="Left" KeyDown="tbPageNumber_KeyDown"/>
+            <Button Name="butPageUp" Content="&gt;" Click="OnPageUp" ClickMode="Press" />
+
+            <Label Name="labTotalCount" Margin="30,0,0,0" />
+            <Button Name="butHashSearch" Content="Search hash" DockPanel.Dock="Right" HorizontalAlignment="Right" Click="OnHashSearch" ClickMode="Press"/>
+            <TextBox Name="tbHashSearch" Width="200" DockPanel.Dock="Right"  HorizontalAlignment="Right"/>
+        </DockPanel>
+        <Button Content="Exit" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,10,0,0" Click="OnExit_Click"/>
+
+    </StackPanel>
+</UserControl>
