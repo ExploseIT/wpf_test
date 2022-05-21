@@ -9,6 +9,6 @@ Database is a Sqlite file place in the data_dir folder, in range of the project 
 The application has two functions
 
  1) Display the contents of the Sqlite file in a datagrid, paginated in rows of 10
- 2) Rejoin into one file and then dislay, a file which has been sliced up and placed in data_dir\sliced_files
+ 2) Rejoin into one file and then display, a file which has been sliced up and placed in data_dir\sliced_files
 
 
