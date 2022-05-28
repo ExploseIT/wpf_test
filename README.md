@@ -1,6 +1,6 @@
 This is my first WPF project
 
-Tools used was Visual Sutiod 2022 Community
+Tools used was Visual Studio 2022 Community
 
 Environment is .Net Core 6.0
 
